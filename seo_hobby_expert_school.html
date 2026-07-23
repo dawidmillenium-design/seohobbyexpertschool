@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d1d43">
+  <title>SEO HOBBY EXPERT School</title>
+  <style>
+    :root {
+      --ink: #0d1d43;
+      --muted: #56678d;
+      --line: #e2e8f4;
+      --paper: #ffffff;
+      --surface: #f6f9ff;
+      --blue: #3975f6;
+      --blue-soft: #eaf0ff;
+      --mint: #1cda86;
+      --mint-deep: #0ba962;
+      --shadow: 0 18px 50px rgba(22, 47, 103, .12);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+    button, input { font: inherit; }
+    a { color: inherit; }
+
+    .shell { max-width: 1280px; margin: auto; padding: 0 28px; }
+    .topbar {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(255,255,255,.9); backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(226,232,244,.9);
+    }
+    .nav { height: 88px; display: flex; align-items: center; gap: 28px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 850; letter-spacing: -.03em; font-size: 22px; text-decoration: none; }
+    .mark { display: inline-flex; gap: 4px; align-items: end; height: 30px; }
+    .mark i { display: block; width: 7px; border-radius: 4px; background: linear-gradient(180deg, #6fc0ff, #347cf8); }
+    .mark i:nth-child(1) { height: 12px; }.mark i:nth-child(2) { height: 20px; }.mark i:nth-child(3) { height: 29px; }
+    .nav-links { margin-left: auto; display: flex; gap: 27px; align-items: center; color: #42557d; font-weight: 650; }
+    .nav-links a { text-decoration: none; }
+    .nav-links a:hover { color: var(--blue); }
+    .mode { width: 46px; height: 46px; border: 1px solid #dbe4f3; background: #f7faff; border-radius: 14px; cursor: pointer; font-size: 20px; }
+    .nav-cta, .primary, .secondary { border: 0; border-radius: 14px; cursor: pointer; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 9px; }
+    .nav-cta { background: var(--mint); color: #052a20; padding: 15px 20px; }
+    .nav-cta:hover, .primary:hover { background: var(--mint-deep); color: white; }
+
+    .hero { min-height: 590px; display: grid; grid-template-columns: 1.04fr .96fr; gap: 42px; align-items: center; padding: 88px 0 70px; position: relative; }
+    .hero::before { content: ""; position: absolute; inset: 0 -60px; z-index: -1; background: radial-gradient(circle at 18% 12%, #e8f1ff 0, transparent 37%), radial-gradient(circle at 76% 32%, #e4fff5 0, transparent 34%), linear-gradient(115deg, #f8fbff, #fff 48%, #f7fffc); border-bottom: 1px solid #e8edf6; }
+    .eyebrow { color: #2075c4; text-transform: uppercase; letter-spacing: .19em; font-weight: 850; font-size: 13px; }
+    h1 { font-size: clamp(48px, 6.25vw, 82px); line-height: .97; letter-spacing: -.068em; margin: 25px 0; max-width: 650px; }
+    h1 em { color: #19c980; font-style: italic; }
+    .hero p { max-width: 625px; color: #526589; font-size: 22px; margin: 0 0 29px; }
+    .button-row { display: flex; gap: 14px; flex-wrap: wrap; }
+    .primary { padding: 17px 23px; background: var(--mint); color: #062c20; }
+    .secondary { padding: 16px 22px; border: 1px solid #d5deee; background: white; color: var(--ink); }
+    .signal { display: flex; gap: 12px; align-items: center; color: #69799a; margin-top: 22px; font-size: 14px; }
+    .check { border-radius: 50%; border: 2px solid #7790b9; width: 22px; height: 22px; display: inline-grid; place-items: center; color: #3f6da0; font-size: 13px; }
+    .social-proof { display: flex; align-items: center; gap: 15px; margin-top: 42px; color: #637498; }
+    .avatars { display: flex; }
+    .avatars span { width: 37px; height: 37px; margin-right: -8px; border: 3px solid white; border-radius: 50%; display: grid; place-items: center; font-size: 15px; background: linear-gradient(135deg, #9bd4ff, #a1ffe1); }
+    .stars { color: #1478cc; letter-spacing: 2px; font-size: 17px; }
+
+    .hero-visual { position: relative; padding: 24px; border: 1px solid #d9e2f1; border-radius: 27px; background: rgba(255,255,255,.78); box-shadow: var(--shadow); }
+    .lesson-screen { min-height: 350px; border-radius: 19px; padding: 26px; overflow: hidden; background: linear-gradient(135deg, #172b61, #3269e5 52%, #38d99a); color: white; position: relative; }
+    .lesson-screen::after { content: ""; position: absolute; width: 250px; height: 250px; border-radius: 50%; background: rgba(255,255,255,.16); right: -82px; bottom: -106px; }
+    .live { display: inline-block; background: #93efc8; color: #075337; padding: 5px 11px; border-radius: 999px; font-weight: 800; font-size: 12px; }
+    .visual-heading { margin: 34px 0 8px; font-size: 35px; line-height: 1; letter-spacing: -.05em; max-width: 330px; }
+    .visual-copy { position: relative; z-index: 1; max-width: 300px; color: #fff; font-family: "Trebuchet MS", "Arial Rounded MT Bold", "Comic Sans MS", cursive; font-size: 18px; font-weight: 800; letter-spacing: .012em; line-height: 1.38; text-shadow: 0 2px 0 rgba(9, 29, 82, .25); transform: rotate(-1deg); }
+    .progress-panel { position: absolute; z-index: 3; right: -34px; bottom: -32px; width: min(370px, 80%); padding: 21px; color: #f7faff; background: #0e1630; border: 5px solid white; border-radius: 22px; box-shadow: var(--shadow); }
+    .progress-panel p { color: #c5d0e6; margin: 8px 0 15px; font-size: 15px; }
+    .meter { height: 8px; background: #35405c; border-radius: 999px; overflow: hidden; }.meter b { display: block; height: 100%; width: 46%; background: var(--mint); border-radius: inherit; }
+
+    .section { padding: 88px 0; }
+    .section.alt { background: var(--surface); }
+    .section-head { display: flex; gap: 30px; justify-content: space-between; align-items: end; margin-bottom: 31px; }
+    h2 { margin: 10px 0 0; font-size: clamp(32px, 4vw, 52px); letter-spacing: -.055em; line-height: 1; }
+    .section-head > p { color: var(--muted); max-width: 480px; margin: 0; }
+
+    .quick-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .quick { padding: 23px; border: 1px solid var(--line); border-radius: 19px; background: white; box-shadow: 0 10px 25px rgba(18,44,95,.04); }
+    .quick b { font-size: 26px; letter-spacing: -.04em; display: block; margin-top: 18px; }.quick small { color: var(--muted); }.quick .dot { width: 38px; height: 38px; background: var(--blue-soft); color: var(--blue); border-radius: 12px; display: grid; place-items: center; font-size: 19px; }
+
+    .learning-layout { display: grid; grid-template-columns: 270px 1fr; gap: 30px; align-items: start; }
+    .filter-card { background: white; border: 1px solid var(--line); border-radius: 20px; padding: 18px; position: sticky; top: 110px; }
+    .filter-card h3 { margin: 4px 0 15px; font-size: 16px; }.filter-card button { width: 100%; padding: 11px 12px; text-align: left; background: none; color: #516487; border: 0; border-radius: 10px; cursor: pointer; font-weight: 700; }.filter-card button.active, .filter-card button:hover { background: #ebf3ff; color: #1769d2; }
+    .toolbar { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }.search { flex: 1; border: 1px solid #dce5f3; padding: 14px 15px; border-radius: 13px; color: var(--ink); outline: none; }.search:focus { border-color: #65a6ff; box-shadow: 0 0 0 4px #e8f3ff; }.count { color: var(--muted); font-size: 14px; white-space: nowrap; }
+    .module-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+    .module-card { background: #fff; border: 1px solid var(--line); border-radius: 21px; overflow: hidden; transition: transform .2s ease, box-shadow .2s ease; }.module-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .module-top { padding: 22px 22px 17px; background: linear-gradient(125deg, #edf4ff, #f8fcff 55%, #e8fff4); min-height: 161px; }
+    .module-kicker { display: flex; justify-content: space-between; color: #56709a; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .09em; }.pill { background: white; border: 1px solid #dce6f3; padding: 4px 8px; border-radius: 999px; color: #396394; font-size: 11px; letter-spacing: 0; }
+    .module-card h3 { margin: 18px 0 0; font-size: 23px; letter-spacing: -.035em; line-height: 1.08; }.module-body { padding: 17px 22px 22px; }.module-body p { color: var(--muted); margin: 0 0 16px; font-size: 15px; min-height: 46px; }.module-actions { display: flex; gap: 8px; justify-content: space-between; align-items: center; }.outline { border: 1px solid #d8e3f3; color: #285894; padding: 9px 11px; border-radius: 10px; background: white; cursor: pointer; font-weight: 800; }.complete { border: 0; color: #087548; background: #dffbed; padding: 9px 11px; border-radius: 10px; cursor: pointer; font-weight: 800; }.complete.done { background: #187ef4; color: #fff; }
+
+    .plan { padding: 28px; border-radius: 23px; background: linear-gradient(122deg, #0e1d43, #14346f); color: white; display: grid; grid-template-columns: 1.35fr 1fr; gap: 28px; align-items: center; }.plan h2 { margin-top: 10px; }.plan p { color: #c7d5ef; max-width: 650px; }.plan-list { display: grid; gap: 10px; }.plan-list div { padding: 11px 13px; background: rgba(255,255,255,.09); border-radius: 10px; }.plan-list span { color: #87f5c1; margin-right: 9px; }
+    .faq { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }.faq article { padding: 23px; border-radius: 19px; background: white; border: 1px solid var(--line); }.faq h3 { margin: 0 0 9px; font-size: 18px; }.faq p { color: var(--muted); margin: 0; font-size: 15px; }
+    .bottom-cta { padding-top: 0; }.enrol-card { padding: 34px; border-radius: 28px; background: linear-gradient(120deg, #102552, #246add 58%, #1cda86); color: #fff; display: flex; align-items: center; justify-content: space-between; gap: 28px; box-shadow: var(--shadow); }.enrol-card h2 { max-width: 650px; }.enrol-card p { max-width: 600px; margin: 14px 0 0; color: #e7f1ff; }.enrol-button { min-width: 170px; white-space: nowrap; background: #fff; color: #133c78; }.enrol-button:hover { background: var(--mint); color: #062c20; }
+    footer { border-top: 1px solid var(--line); padding: 32px 0; color: var(--muted); font-size: 14px; }.foot { display: flex; justify-content: space-between; gap: 20px; }.foot a { color: #3368ac; }
+
+    dialog { max-width: 650px; width: calc(100% - 34px); border: 0; border-radius: 24px; padding: 0; box-shadow: 0 30px 100px rgba(5,18,48,.32); }.dialog-inner { padding: 28px; }.dialog-close { float: right; border: 0; background: #eff4fd; border-radius: 10px; width: 36px; height: 36px; cursor: pointer; }.dialog-kicker { color: #3275d4; font-size: 13px; letter-spacing: .13em; text-transform: uppercase; font-weight: 850; }.dialog-inner h2 { font-size: 37px; margin: 12px 0; }.dialog-inner p { color: var(--muted); }.lesson-list { padding: 0; list-style: none; margin: 20px 0; }.lesson-list li { padding: 12px 0; border-top: 1px solid #e8edf5; }.source-link { color: #fff; background: #206ff2; padding: 12px 15px; border-radius: 12px; text-decoration: none; font-weight: 800; display: inline-flex; }
+    dialog::backdrop { background: rgba(9, 18, 42, .55); backdrop-filter: blur(3px); }
+
+    body.dark { --paper: #0c1328; --surface: #111b35; --ink: #eff5ff; --muted: #b4c1d8; --line: #24314e; --blue-soft: #142a59; --shadow: 0 18px 50px rgba(0,0,0,.35); background: var(--paper); }.dark .topbar { background: rgba(12,19,40,.9); }.dark .hero::before { background: radial-gradient(circle at 18% 12%, #172d5b, transparent 37%), radial-gradient(circle at 76% 32%, #0f4b3b, transparent 34%), linear-gradient(115deg, #0d1730, #0c1328 48%, #0d1e1b); }.dark .quick, .dark .module-card, .dark .filter-card, .dark .faq article, .dark .secondary, .dark .outline, .dark dialog { background: #111d38; }.dark .module-top { background: linear-gradient(125deg, #172a52, #112039 55%, #123b31); }.dark .search { background: #0c1730; color: #eff5ff; border-color: #2f4268; }.dark .mode { background: #14213c; border-color: #2b3e63; }.dark .progress-panel { border-color: #152244; }
+
+    @media (max-width: 900px) { .nav-links { display: none; }.hero { grid-template-columns: 1fr; padding-top: 62px; }.hero-visual { max-width: 640px; margin: 0 auto; width: 92%; }.quick-grid { grid-template-columns: repeat(2,1fr); }.learning-layout { grid-template-columns: 1fr; }.filter-card { position: static; display: flex; gap: 4px; overflow-x: auto; padding: 8px; }.filter-card h3 { display:none; }.filter-card button { white-space: nowrap; width: auto; }.plan { grid-template-columns: 1fr; }.faq { grid-template-columns: 1fr; } }
+    @media (max-width: 580px) { .shell { padding: 0 18px; }.nav { height: 73px; gap: 10px; }.brand { font-size: 17px; }.nav-cta { padding: 11px 12px; font-size: 13px; }.mode { width: 39px; height: 39px; }.hero { gap: 28px; }.hero p { font-size: 18px; }.progress-panel { right: -11px; bottom: -45px; }.section { padding: 62px 0; }.section-head { display:block; }.section-head > p { margin-top: 15px; }.quick-grid, .module-grid { grid-template-columns: 1fr; }.toolbar { flex-wrap: wrap; }.count { width: 100%; }.enrol-card { display: block; padding: 28px; }.enrol-button { width: 100%; margin-top: 22px; }.foot { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="shell nav" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="SEO HOBBY EXPERT School home"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>SEO HOBBY EXPERT</a>
+      <div class="nav-links">
+        <a href="#learn">Learn</a><a href="#roadmap">Roadmap</a><a href="#method">Method</a><a href="#faq">FAQ</a>
+      </div>
+      <button class="mode" id="mode" title="Toggle colour theme" aria-label="Toggle colour theme">☼</button>
+      <a class="nav-cta" href="https://seohobby.myteachify.com/" target="_blank" rel="noopener">Start learning <span aria-hidden="true">→</span></a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="shell hero" aria-labelledby="hero-title">
+      <div>
+        <div class="eyebrow">A practical school for people-first SEO</div>
+        <h1 id="hero-title">Build search skills that <em>last.</em></h1>
+        <p>Turn SEO HOBBY EXPERT’s blog library into a clear, calm learning path for content, technical foundations, links, local visibility, and AI-assisted work.</p>
+        <div class="button-row"><a class="primary" href="#learn">Explore the curriculum <span aria-hidden="true">→</span></a><a class="secondary" href="#roadmap">See your roadmap</a></div>
+        <div class="signal"><span class="check">✓</span>Learn responsibly. No ranking guarantees. No spam shortcuts.</div>
+        <div class="social-proof"><div class="avatars" aria-hidden="true"><span>✦</span><span>⌁</span><span>◉</span><span>◒</span></div><div><div class="stars">★★★★★</div><small>Built from the SEO HOBBY EXPERT learning library</small></div></div>
+      </div>
+      <div class="hero-visual" aria-label="Preview of the learning dashboard">
+        <div class="lesson-screen"><span class="live">START HERE</span><div class="visual-heading">Your SEO skill map</div><p class="visual-copy">A guided path from intent and content to ethical links and international growth.</p></div>
+        <div class="progress-panel"><strong>Learning progress</strong><p><span id="heroDone">0</span> of 14 core lessons completed</p><div class="meter"><b id="heroMeter"></b></div></div>
+      </div>
+    </section>
+
+    <section class="section alt" id="roadmap">
+      <div class="shell"><div class="section-head"><div><div class="eyebrow">Your skill stack</div><h2>Learn in the order work happens.</h2></div><p>Start with the searcher, publish genuinely helpful pages, make your site understandable, then earn relevant mentions and measure the result.</p></div>
+      <div class="quick-grid">
+        <article class="quick"><div class="dot">①</div><b>Understand</b><small>Intent, audience, and how search works</small></article>
+        <article class="quick"><div class="dot">②</div><b>Create</b><small>Useful content with AI as an assistant</small></article>
+        <article class="quick"><div class="dot">③</div><b>Connect</b><small>Crawlable links, local pages, and global routes</small></article>
+        <article class="quick"><div class="dot">④</div><b>Improve</b><small>Search Console habits and ethical review</small></article>
+      </div></div>
+    </section>
+
+    <section class="section" id="learn">
+      <div class="shell"><div class="section-head"><div><div class="eyebrow">The course library</div><h2>Choose a lesson. Build momentum.</h2></div><p>Lessons are original course summaries linked to the relevant source post—not copied articles or promises of rankings.</p></div>
+      <div class="learning-layout">
+        <aside class="filter-card" aria-label="Filter modules"><h3>Filter modules</h3><button class="active" data-filter="all">All modules</button><button data-filter="foundation">Foundations</button><button data-filter="content">Content + AI</button><button data-filter="links">Links + authority</button><button data-filter="growth">Local + global</button><button data-filter="trust">Trust + safety</button></aside>
+        <div><div class="toolbar"><input class="search" id="search" type="search" placeholder="Search lessons, e.g. local, AI, links" aria-label="Search lessons"><span class="count" id="count"></span></div><div class="module-grid" id="modules"></div></div>
+      </div></div>
+    </section>
+
+    <section class="section alt" id="method"><div class="shell"><div class="plan"><div><div class="eyebrow" style="color:#93e8c4">A responsible method</div><h2>Build visibility by being useful—not by trying to trick search.</h2><p>Use AI to support original work, link naturally where it helps users, make site structure crawlable, and measure before changing direction.</p></div><div class="plan-list"><div><span>✓</span>People-first content</div><div><span>✓</span>Clear site structure</div><div><span>✓</span>Relevant, earned links</div><div><span>✓</span>Ongoing measurement</div></div></div></div>
+    </section>
+
+    <section class="section" id="faq"><div class="shell"><div class="section-head"><div><div class="eyebrow">School notes</div><h2>Good SEO starts with good questions.</h2></div></div><div class="faq"><article><h3>Will this guarantee rankings?</h3><p>No. Search results depend on many factors. The school focuses on durable practices, not guarantees or paid ranking promises.</p></article><article><h3>Can I use AI for content?</h3><p>Yes—as a tool. Review facts, add original value, and make sure the result genuinely serves the reader.</p></article><article><h3>What is the source?</h3><p>The course catalog is curated from the supplied sitemap, with current principles linked in the resources below.</p></article></div></div>
+    </section>
+
+    <section class="section bottom-cta" id="join"><div class="shell"><div class="enrol-card"><div><div class="eyebrow" style="color:#a5ffd2">Ready to begin?</div><h2>Put your SEO learning plan into action.</h2><p>Continue with the SEO HOBBY EXPERT course whenever you are ready.</p></div><a class="primary enrol-button" href="https://seohobby.myteachify.com/" target="_blank" rel="noopener">Start learning <span aria-hidden="true">→</span></a></div></div>
+    </section>
+  </main>
+
+  <footer><div class="shell foot"><span>SEO HOBBY EXPERT School · Learning app prototype</span><span>Principles: <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener">people-first content</a> · <a href="https://developers.google.com/search/docs/essentials/spam-policies" target="_blank" rel="noopener">spam policies</a></span></div></footer>
+
+  <dialog id="lessonDialog"><div class="dialog-inner"><button class="dialog-close" id="closeDialog" aria-label="Close lesson">×</button><div class="dialog-kicker" id="dialogKicker"></div><h2 id="dialogTitle"></h2><p id="dialogDescription"></p><ul class="lesson-list" id="dialogList"></ul><a class="source-link" id="sourceLink" target="_blank" rel="noopener">Open source article ↗</a></div></dialog>
+
+  <script>
+    const lessons = [
+      {id:1, cat:'foundation', module:'Foundations', title:'Master SEO from home', time:'12 min', description:'Start with what a searcher needs, then use a simple repeatable learning routine.', takeaways:['Define a page purpose before writing','Use words readers actually use','Keep a weekly learning and review habit'], source:'https://letstalkseoexpert.blogspot.com/2023/01/master-seo-from-home-with-seo-hobby.html'},
+      {id:2, cat:'foundation', module:'Foundations', title:'How search works', time:'10 min', description:'Build a plain-English model of crawling, indexing, and serving relevant results.', takeaways:['Make important pages discoverable','Use descriptive titles and headings','Treat indexing as a process, not a promise'], source:'https://letstalkseoexpert.blogspot.com/2023/01/secrets-of-googleverse-revealed-how-seo.html'},
+      {id:3, cat:'foundation', module:'Foundations', title:'Focus before optimisation', time:'9 min', description:'Choose a clear audience, topic, and next action so your page does not try to serve everyone.', takeaways:['Name the search intent','Remove competing messages','Measure one outcome at a time'], source:'https://letstalkseoexpert.blogspot.com/2024/02/mastering-seo-focus-strategies-for.html'},
+      {id:4, cat:'content', module:'Content + AI', title:'Helpful content with AI', time:'14 min', description:'Use AI for outlines and iteration while keeping human review, accuracy, and a clear point of view.', takeaways:['Use AI as a drafting assistant','Check every factual claim','Add experience and useful specifics'], source:'https://letstalkseoexpert.blogspot.com/2023/01/understanding-seo-and-ai-content.html'},
+      {id:5, cat:'content', module:'Content + AI', title:'Content systems that stay useful', time:'11 min', description:'Plan a content workflow that helps readers instead of publishing pages only to target keywords.', takeaways:['Map pages to reader questions','Refresh rather than duplicate','Write clear calls to action'], source:'https://letstalkseoexpert.blogspot.com/2023/05/leverage-power-of-ai-for-content.html'},
+      {id:6, cat:'content', module:'Content + AI', title:'SEO communication', time:'8 min', description:'Explain SEO choices clearly to clients, teammates, and readers without hype.', takeaways:['Use plain language','Separate evidence from opinions','Set realistic expectations'], source:'https://letstalkseoexpert.blogspot.com/2024/02/mastering-seo-communication-beyond.html'},
+      {id:7, cat:'links', module:'Links + authority', title:'Link building with purpose', time:'15 min', description:'Learn how helpful internal and external links create context for people and search engines.', takeaways:['Link where it helps the reader','Use meaningful anchor text','Avoid automated or paid link schemes'], source:'https://letstalkseoexpert.blogspot.com/2023/01/link-building-powerful-seo-strategy.html'},
+      {id:8, cat:'links', module:'Links + authority', title:'Contextual links', time:'11 min', description:'Place links inside relevant explanations, rather than adding lists of unrelated URLs.', takeaways:['Link to the next useful step','Keep link destinations relevant','Audit outdated internal links'], source:'https://letstalkseoexpert.blogspot.com/2023/01/contextual-link-building-unlocking-more.html'},
+      {id:9, cat:'links', module:'Links + authority', title:'Avoid SEO scams and link spam', time:'9 min', description:'Recognise claims that sell rankings, large batches of links, or secret shortcuts.', takeaways:['Ask what work is actually delivered','Avoid link schemes','Keep control of your accounts and data'], source:'https://letstalkseoexpert.blogspot.com/2023/01/beware-protect-yourself-from-seo-scams.html'},
+      {id:10, cat:'growth', module:'Local + global', title:'Local SEO that helps nearby people', time:'13 min', description:'Make essential business information clear, current, and easy to act on.', takeaways:['Keep business facts consistent','Answer local customer questions','Create useful location information'], source:'https://letstalkseoexpert.blogspot.com/2023/01/get-your-business-seo-ranked-with-local.html'},
+      {id:11, cat:'growth', module:'Local + global', title:'International SEO basics', time:'13 min', description:'Plan for language and regional audiences with clear page structure and choices.', takeaways:['Use separate, stable locale URLs','Let visitors choose a version','Avoid automatic assumptions about location'], source:'https://letstalkseoexpert.blogspot.com/2023/01/revealing-advantages-of-international.html'},
+      {id:12, cat:'growth', module:'Local + global', title:'Search results and business goals', time:'10 min', description:'Connect search visibility to real customer outcomes rather than vanity metrics.', takeaways:['Choose useful conversion actions','Review intent behind queries','Report on outcomes, not promises'], source:'https://letstalkseoexpert.blogspot.com/2023/01/boost-your-seo-with-serp-business.html'},
+      {id:13, cat:'trust', module:'Trust + safety', title:'Choose an SEO agency well', time:'9 min', description:'Use questions and transparent expectations when considering outside SEO support.', takeaways:['Ask for scope and reporting','Reject ranking guarantees','Retain ownership of key accounts'], source:'https://letstalkseoexpert.blogspot.com/2024/03/choosing-right-seo-agency-key-questions.html'},
+      {id:14, cat:'trust', module:'Trust + safety', title:'Build an SEO team', time:'12 min', description:'Clarify roles across content, technical work, measurement, and stakeholder communication.', takeaways:['Assign accountable owners','Create a simple review cadence','Document decisions and learnings'], source:'https://letstalkseoexpert.blogspot.com/2023/05/the-guide-to-building-seo-team-for.html'}
+    ];
+    const state = { filter:'all', query:'', done: new Set(JSON.parse(localStorage.getItem('seoSchoolDone') || '[]')) };
+    const grid = document.getElementById('modules'); const count = document.getElementById('count'); const dialog = document.getElementById('lessonDialog');
+    function save(){ localStorage.setItem('seoSchoolDone', JSON.stringify([...state.done])); updateProgress(); }
+    function updateProgress(){ const n=state.done.size; document.getElementById('heroDone').textContent=n; document.getElementById('heroMeter').style.width=`${(n/lessons.length)*100}%`; }
+    function render(){ const q=state.query.toLowerCase(); const list=lessons.filter(l=>(state.filter==='all'||l.cat===state.filter)&&(`${l.title} ${l.description} ${l.module}`).toLowerCase().includes(q)); count.textContent=`${list.length} lesson${list.length===1?'':'s'} shown`;
+      grid.innerHTML=list.map(l=>`<article class="module-card"><div class="module-top"><div class="module-kicker"><span>${l.module}</span><span class="pill">${l.time}</span></div><h3>${l.title}</h3></div><div class="module-body"><p>${l.description}</p><div class="module-actions"><button class="outline" data-open="${l.id}">View lesson</button><button class="complete ${state.done.has(l.id)?'done':''}" data-done="${l.id}">${state.done.has(l.id)?'✓ Complete':'Mark complete'}</button></div></div></article>`).join('') || '<p>No lessons match that search yet.</p>'; }
+    document.querySelectorAll('[data-filter]').forEach(btn=>btn.addEventListener('click',()=>{ state.filter=btn.dataset.filter; document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('active',b===btn)); render(); }));
+    document.getElementById('search').addEventListener('input',e=>{state.query=e.target.value;render();});
+    grid.addEventListener('click',e=>{const id=Number(e.target.dataset.open||e.target.dataset.done); if(!id)return; const l=lessons.find(x=>x.id===id); if(e.target.dataset.done){state.done.has(id)?state.done.delete(id):state.done.add(id);save();render();return;} document.getElementById('dialogKicker').textContent=`${l.module} · ${l.time}`;document.getElementById('dialogTitle').textContent=l.title;document.getElementById('dialogDescription').textContent=l.description;document.getElementById('dialogList').innerHTML=l.takeaways.map(t=>`<li>✓ ${t}</li>`).join('');document.getElementById('sourceLink').href=l.source;dialog.showModal();});
+    document.getElementById('closeDialog').addEventListener('click',()=>dialog.close());
+    document.getElementById('mode').addEventListener('click',()=>{document.body.classList.toggle('dark');document.getElementById('mode').textContent=document.body.classList.contains('dark')?'☾':'☼';});
+    updateProgress(); render();
+  </script>
+</body>
+</html>
